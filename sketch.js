@@ -7,6 +7,8 @@ var ball;
 var groundObj;
 var left;
 var right;
+var left2
+var right2
 var topSide;
 var ball_options;
 
@@ -23,7 +25,7 @@ function setup() {
 		isStatic:false,
 		restitution:0.5,
 		friction:0,
-		density:1.2
+		density:1.2,
 		}
 
 	//Create the Bodies Here.
@@ -33,6 +35,8 @@ function setup() {
 	groundObj = new ground(650,566,1300,50);
 	left = new ground(600,490,20,100);
 	right = new ground(780,490,20,100);
+	left2 = new ground(1270,560,50,1000)
+	right2 = new ground(1270,560,50,1000)
     top = new ground(650,10,1200,50);
 
 	Engine.run(engine);
@@ -57,7 +61,7 @@ function draw() {
 function keyPressed(){
 
 	if(keyCode===UP_ARROW){
-		Matter.Body.applyForce(ball,{x:0,y:0},{x:0,y:-6})
+		Matter.Body.applyForce(ball,{x:0,y:0},{x:2,y:-2})
 	}	
 	else if(keyCode===RIGHT_ARROW){
 		Matter.Body.applyForce(ball,{x:0,y:0},{x:4,y:0})
